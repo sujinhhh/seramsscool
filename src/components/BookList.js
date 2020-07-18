@@ -9,7 +9,7 @@ class BookList extends Component {
     return (
       <div
         className="book-list"
-        style={{ color: theme.sytax, background: theme.bg }}
+        style={{ color: theme.syntax, background: theme.bg }}
       >
         <ul>
           <li style={{ background: theme.ui }}>Daily Scriptue</li>
