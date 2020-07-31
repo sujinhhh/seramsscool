@@ -9,11 +9,11 @@ body {
 
 /* app styles */
 .App {
-  max-width: 400px;
-  margin: 30px auto;
-  text-align: center;
+  /* max-width: 400px; */
+  /* margin: 30px auto; */
+  /* text-align: center; */
 }
-nav {
+/* nav {
   padding: 5px;
 }
 nav ul {
@@ -22,17 +22,15 @@ nav ul {
 nav ul li {
   display: inline-block;
   margin: 0 10px;
+} */
+.home .post img {
+  width: 300px;
+  position: absolute;
+  right: -110px;
+  opacity: 0.6;
 }
-.book-list {
-  padding: 20px;
-  margin-bottom: 20px;
-}
-.book-list ul {
-  padding: 0;
-  list-style-type: none;
-}
-.book-list li {
-  padding: 10px;
-  margin: 10px auto;
-  border-radius: 10px;
+
+.home .post {
+  overflow: hidden;
+  padding-left: 8px;
 }
