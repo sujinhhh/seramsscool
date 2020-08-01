@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import axios from "axios";
+import { connect } from "react-redux";
+import { deletePost } from "../action/postActions";
+// import axios from "axios";  ㄷㅔ이터 다른 곳에서 구해 올때
 
-export default class Portfolio extends Component {
+class Portfolio extends Component {
   // state = {
   //   post: null,
   // };
@@ -13,12 +15,21 @@ export default class Portfolio extends Component {
   //     });
   //   });
   // }
+  handleClick = () => {
+    this.props.deletePost(this.props.post.id);
+    this.props.history.push("/");
+  };
 
   render() {
-    const post = this.state.post ? (
+    const post = this.props.post ? (
       <div className="post">
-        <h2 className="center">{this.state.post.title}</h2>
-        <p className="center">{this.state.post.body}</p>
+        <h2 className="center">{this.props.post.title}</h2>
+        <p className="center">{this.props.post.body}</p>
+        <div className="center">
+          <button className="bnt grey" onClick={this.handleClick}>
+            Delete
+          </button>
+        </div>
       </div>
     ) : (
       <div className="center"> Loading post... </div>
@@ -31,3 +42,20 @@ export default class Portfolio extends Component {
     );
   }
 }
+
+const mapStateToProps = (state, ownProps) => {
+  let id = ownProps.match.params.post_id;
+  return {
+    post: state.posts.find((post) => post.id === id),
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deletePost: (id) => {
+      dispatch(deletePost(id));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Portfolio);
