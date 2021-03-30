@@ -10,21 +10,24 @@ const NavBar = (props) => {
     <nav className="nav-waper red darken-3">
       <div className="container">
         <Link to="/" className="left brand-logo">
-          Sujin's Page
+          새람스쿨
         </Link>
         <ul className="right">
           <li>
             <Link to="/"> Home</Link>
           </li>
           <li>
-            <Link to="/about"> About me</Link>
+            <Link to="/exam"> 새람 4월 평가</Link>
+          </li>
+          {/* <li>
+            <Link to="/bible"> Bible</Link>
           </li>
           <li>
-            <Link to="/bible"> Bible</Link>s
+            <Link to="/contact"> Study</Link>
           </li>
           <li>
-            <Link to="/contact"> Contact</Link>
-          </li>
+            <Link to="/study"> Study 2</Link>
+          </li> */}
         </ul>
       </div>
     </nav>
