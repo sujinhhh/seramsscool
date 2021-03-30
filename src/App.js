@@ -7,7 +7,7 @@ import Study from "./components/Contact";
 import AboutMe from "./components/AboutMe";
 import Portfolio from "./components/Portfolio";
 import Counters from "./components/Study";
-import { SeramTest } from "./components/SeramTest";
+import SeramTest from "./components/exam/SeramTest";
 
 export default class App extends Component {
   render() {

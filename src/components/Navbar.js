@@ -17,17 +17,14 @@ const NavBar = (props) => {
             <Link to="/"> Home</Link>
           </li>
           <li>
-            <Link to="/exam"> 새람 4월 평가</Link>
-          </li>
-          {/* <li>
-            <Link to="/bible"> Bible</Link>
+            <Link to="/exam"> 새람 4월 영어시험</Link>
           </li>
           <li>
-            <Link to="/contact"> Study</Link>
+            <Link to="/contact"> 발표</Link>
           </li>
           <li>
-            <Link to="/study"> Study 2</Link>
-          </li> */}
+            <Link to="/study"> 쭌이</Link>
+          </li>
         </ul>
       </div>
     </nav>
