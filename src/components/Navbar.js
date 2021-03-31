@@ -10,20 +10,23 @@ const NavBar = (props) => {
     <nav className="nav-waper red darken-3">
       <div className="container">
         <Link to="/" className="left brand-logo">
-          새람스쿨
+          새.람.하 스쿨
         </Link>
         <ul className="right">
           <li>
             <Link to="/"> Home</Link>
           </li>
           <li>
-            <Link to="/exam"> 새람 4월 영어시험</Link>
+            <Link to="/exam"> 수업</Link>
+          </li>
+          <li>
+            <Link to="/exam"> 영어시험</Link>
           </li>
           <li>
             <Link to="/contact"> 발표</Link>
           </li>
           <li>
-            <Link to="/study"> 쭌이</Link>
+            <Link to="/study"> 과제</Link>
           </li>
         </ul>
       </div>

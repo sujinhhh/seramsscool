@@ -3,6 +3,8 @@ import Exam2 from "./Exam2";
 import quizList from "./quizList";
 import QuestionBox from "./QuestionBox";
 import { Result } from "./Result";
+import { Typography, createMuiTheme, ThemeProvider } from "@material-ui/core";
+import { red, pink } from "@material-ui/core/colors";
 
 class SeramTest extends Component {
   state = {
@@ -43,29 +45,44 @@ class SeramTest extends Component {
   }
 
   render() {
+    const theme = createMuiTheme({
+      palette: {
+        primary: {
+          main: "#651fff",
+        },
+        secondary: pink,
+      },
+      // typography: {
+      //   fontFamily: "Single Day",
+      // },
+    });
     return (
-      <div className="test-container">
-        <div className="title">새람 시험지</div>
-        {this.state.questionList.length > 0 &&
-          this.state.responses < 10 &&
-          this.state.questionList.map(
-            ({ question, answers, correct, questionId }) => {
-              return (
-                <h4>
-                  <QuestionBox
-                    question={question}
-                    options={answers}
-                    key={questionId}
-                    selected={(answer) => this.computeAnswer(answer, correct)}
-                  />
-                </h4>
-              );
-            }
-          )}
-        {this.state.responses === 10 ? (
-          <Result score={this.state.score} playAgain={this.playAgain} />
-        ) : null}
-      </div>
+      <ThemeProvider theme={theme}>
+        <div className="test-container">
+          <Typography variant="h3" align="center" color="primary">
+            새람 시험지
+          </Typography>
+          {this.state.questionList.length > 0 &&
+            this.state.responses < 10 &&
+            this.state.questionList.map(
+              ({ question, answers, correct, questionId }) => {
+                return (
+                  <h4>
+                    <QuestionBox
+                      question={question}
+                      options={answers}
+                      key={questionId}
+                      selected={(answer) => this.computeAnswer(answer, correct)}
+                    />
+                  </h4>
+                );
+              }
+            )}
+          {this.state.responses === 10 ? (
+            <Result score={this.state.score} playAgain={this.playAgain} />
+          ) : null}
+        </div>
+      </ThemeProvider>
     );
   }
 }

@@ -1,9 +1,8 @@
 const qBank = [
   {
-    question:
-      "Virgin Trains, Virgin Atlantic and Virgin Racing, are all companies owned by which famous entrepreneur?   ",
-    answers: ["Richard Branson", "Alan Sugar", "Donald Trump", "Bill Gates"],
-    correct: "Richard Branson",
+    question: "1. What ( ) you do ? - 너 뭐하니?   ",
+    answers: ["do", "did", "does", "don't"],
+    correct: "do",
     questionId: "099099",
   },
   {
