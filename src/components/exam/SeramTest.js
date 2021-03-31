@@ -80,7 +80,7 @@ class SeramTest extends Component {
           <Button
             variant="contained"
             color="secondary"
-            size="small"
+            size="large"
             onClick={this.handleClick}
             style={{ height: "50px" }}
           >
