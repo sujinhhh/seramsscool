@@ -14,7 +14,7 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <NavBar />
+          {/* <NavBar /> */}
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/about" component={AboutMe} />
@@ -22,7 +22,6 @@ export default class App extends Component {
             <Route path="/bible" component={bibleScripture} />
             <Route path="/study" component={Counters} />
             <Route path="/exam" component={SeramTest} />
-            {/* <Route path="/:post_id" component={Portfolio} /> */}
           </Switch>
         </div>
       </BrowserRouter>
