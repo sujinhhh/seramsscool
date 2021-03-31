@@ -10,7 +10,7 @@ const NavBar = (props) => {
     <nav className="nav-waper red darken-3">
       <div className="container">
         <Link to="/" className="left brand-logo">
-          새.람.하 스쿨
+          새.람.하 <small>스쿨</small>
         </Link>
         <ul className="right">
           <li>

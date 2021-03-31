@@ -1,26 +1,18 @@
 import React from "react";
-import {
-  Typography,
-  Button,
-  ButtonGroup,
-  Grid,
-  Card,
-  CardContent,
-} from "@material-ui/core";
+import { Button, ButtonGroup } from "@material-ui/core";
+import "./Exam.css";
 
 const QuestionBox = ({ question, options, selected }) => {
   const [answer, setAnswer] = React.useState(options);
   return (
-    <Card style={{ backgroundColor: "#ede7f6", margin: "0, 30" }}>
-      <CardContent xs={12} justify="center">
-        <Typography variant="h4" gutterBottom>
-          {question}
-        </Typography>
+    <main className="box-container">
+      <div className="question-container">
+        <h3>{question}</h3>
         {answer.map((text, index) => {
           return (
-            <ButtonGroup align="center">
+            <ButtonGroup>
               <Button
-                size="large"
+                size="xlarge"
                 variant="outlined"
                 color="secondary"
                 key={index}
@@ -29,14 +21,19 @@ const QuestionBox = ({ question, options, selected }) => {
                   setAnswer([text]);
                   selected(text);
                 }}
+                style={{
+                  textTransform: "lowercase",
+                  fontSize: "2rem",
+                  margin: "0 5px",
+                }}
               >
                 {text}
               </Button>
             </ButtonGroup>
           );
         })}
-      </CardContent>
-    </Card>
+      </div>
+    </main>
   );
 };
 
