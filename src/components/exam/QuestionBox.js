@@ -10,12 +10,11 @@ const QuestionBox = ({ question, options, selected }) => {
         <h3>{question}</h3>
         {answer.map((text, index) => {
           return (
-            <ButtonGroup>
+            <ButtonGroup key={index}>
               <Button
-                size="xlarge"
+                size="large"
                 variant="outlined"
                 color="secondary"
-                key={index}
                 className="answerBtn"
                 onClick={() => {
                   setAnswer([text]);

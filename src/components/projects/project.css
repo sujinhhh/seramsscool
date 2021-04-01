@@ -1,0 +1,11 @@
+/* Project Summary */
+.project-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project-card {
+  margin-bottom: 20px;
+  background-color: aliceblue;
+  width: 500px;
+}
