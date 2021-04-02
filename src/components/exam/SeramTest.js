@@ -4,8 +4,6 @@ import QuestionBox from "./QuestionBox";
 import { Result } from "./Result";
 import "./Exam.css";
 import { Button } from "@material-ui/core";
-import { connect } from "react-redux";
-import { createExam } from "../../store/actions/examAction";
 
 class SeramTest extends Component {
   state = {
@@ -100,10 +98,4 @@ class SeramTest extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    createExam: (score) => dispatch(createExam(score)),
-  };
-};
-
-export default connect(null, mapDispatchToProps)(SeramTest);
+export default SeramTest;

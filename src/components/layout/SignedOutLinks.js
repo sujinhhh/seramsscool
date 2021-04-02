@@ -12,13 +12,13 @@ const SignedOut = () => {
           <Link to="/"> Home</Link>
         </li>
         <li>
-          <Link to="/exam"> 새람하 스쿨 소개</Link>
+          <Link to="/exam"> 새람쓰~쿨 소개</Link>
         </li>
         <li>
           <Link to="/exam"> 선생님 소개 </Link>
         </li>
         <li>
-          <Link to="/contact"> 발표</Link>
+          <Link to="/"> 발표</Link>
         </li>
         <li>
           <Link to="/signin"> 로그인하기</Link>

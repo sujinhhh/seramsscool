@@ -1,7 +1,7 @@
 const qBank = [
   {
     question: "1. What ( ) you do ? - 너 뭐하니?   ",
-    answers: ["did", "does", "do", "are", "don't", "doesn't", "is"],
+    answers: ["did", "does", "do", "are", "is"],
     correct: "do",
     questionId: "099099",
   },
@@ -13,20 +13,14 @@ const qBank = [
     questionId: "183452",
   },
   {
-    question:
-      "3. Which company did Valve cooperate with in the creation of the Vive?",
-    answers: ["HTC", "Oculus", "Google", "Razer"],
+    question: "3. Where () uncle go? - 삼촌은 어디 가니?",
+    answers: ["did", "does", "do", "are", "is"],
     correct: "HTC",
     questionId: "267908",
   },
   {
-    question: "4. What's the name of Batman's  parents?",
-    answers: [
-      "Thomas & Martha",
-      "Joey & Jackie",
-      "Jason & Sarah",
-      "Todd & Mira",
-    ],
+    question: "4. What is Seha doing? - 새하는 (지금) 머하고 있니?",
+    answers: ["did", "does", "do", "are", "is"],
     correct: "Thomas & Martha",
     questionId: "333247",
   },

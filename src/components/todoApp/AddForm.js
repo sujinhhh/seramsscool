@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./todos.css";
 
 class AddForm extends Component {
   state = {
@@ -18,10 +19,12 @@ class AddForm extends Component {
   };
   render() {
     return (
-      <div>
+      <div className="form-input">
         <form onSubmit={this.handleSubmit}>
           <label>New Todos</label>
           <input
+            className="input"
+            placeholder="여기에 아무말이나 적어보세요"
             type="text"
             onChange={this.handleChange}
             value={this.state.content}

@@ -5,4 +5,5 @@
   background-repeat: no-repeat;
   background-color: #f7b5c7;
   height: 100vh;
+  z-index: -1;
 }
