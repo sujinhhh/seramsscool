@@ -3,6 +3,9 @@ import Notification from "./Notification";
 import ProjectList from "../projects/ProjectList";
 import { connect } from "react-redux";
 import "./dashboard.css";
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
+import { createProject } from "../../store/actions/projectActions";
 
 class Dashboard extends Component {
   render() {
@@ -23,10 +26,11 @@ class Dashboard extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapDispatchToProps = (dispatch) => {
+  console.log(dispatch);
   return {
-    projects: state.project.projects,
+    createProject: (project) => dispatch(createProject(project)),
   };
 };
 
-export default connect(mapStateToProps)(Dashboard);
+export default compose(null, mapDispatchToProps)(Dashboard);

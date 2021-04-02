@@ -1,12 +1,14 @@
 import authReducer from "./authReducer";
 import projectReducer from "./projectReducer";
-import examReducer from "./examReducer";
 import { combineReducers } from "redux";
+import { firestoreReducer } from "redux-firestore";
+import { firebaseReducer } from "react-redux-firebase";
 
 const rootReducer = combineReducers({
-  auth: authReducer,
+  // auth: authReducer,
   project: projectReducer,
-  exam: examReducer,
+  firebase: firebaseReducer,
+  firestore: firestoreReducer,
 });
 
 export default rootReducer;

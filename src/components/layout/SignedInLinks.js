@@ -18,10 +18,10 @@ const SignedLinks = () => {
           <Link to="/exam"> 영어시험</Link>
         </li>
         <li>
-          <Link to="/contact"> 발표</Link>
+          <Link to="/dashboard"> projects</Link>
         </li>
         <li>
-          <Link to="/create"> 과제</Link>
+          <Link to="/create"> create</Link>
         </li>
         <li>
           <Link to="/"> Log Out</Link>

@@ -1,0 +1,49 @@
+import React, { Component, useEffect, useState } from "react";
+import Todos from "./Todos";
+import AddForm from "./AddForm";
+import firebase from "../../config/fbConfig";
+import "./todos.css";
+
+const TodoRoot = () => {
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    firebase
+      .firestore()
+      .collection("todos")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) => {
+        setTodos(
+          snapshot.docs.map((doc) => ({ id: doc.id, todo: doc.data().todo }))
+        );
+      });
+  }, []);
+
+  const deleteTodo = (id) => {
+    const newTodos = todos.filter((item) => item.id !== id);
+    setTodos(newTodos);
+  };
+
+  const addTodos = (todo) => {
+    firebase.firestore().collection("todos").add({
+      todo: todo,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+  };
+
+  return (
+    <div className="todo">
+      <div className="todo-container">
+        <div className="todo-title">
+          <img src="./dasy.png" alt="cherry" />
+          <h1>선생님 할말 있어요~</h1>
+          <img src="./dasy.png" alt="cherry" />
+        </div>
+        <Todos todos={todos} deleteTodo={deleteTodo} />
+        <AddForm addTodos={addTodos} />
+      </div>
+    </div>
+  );
+};
+
+export default TodoRoot;
