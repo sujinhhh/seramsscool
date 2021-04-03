@@ -13,7 +13,7 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 const firebaseApp = firebase.initializeApp(firebaseConfig);
-const firebaseStore = firebase.firestore();
+const firebaseStore = firebaseApp.firestore();
 const auth = firebase.auth();
 const authProvider = new firebase.auth.GoogleAuthProvider();
 
