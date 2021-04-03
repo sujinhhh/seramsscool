@@ -1,4 +1,4 @@
-import firebase from "firebase/app";
+import firebase from "firebase";
 import "firebase/firestore";
 import "firebase/auth";
 
@@ -12,10 +12,11 @@ var firebaseConfig = {
   measurementId: "G-E7Y7TX7DL4",
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.firestore();
-firebase.auth();
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const firebaseStore = firebase.firestore();
+const auth = firebase.auth();
+const authProvider = new firebase.auth.GoogleAuthProvider();
 
 // .settings({ timestampsInSnapshots: true });
 
-export default firebase;
+export { firebaseStore, auth, authProvider, firebaseApp };

@@ -57,10 +57,7 @@ class SeramTest extends Component {
         ) : (
           <div>
             <div className="test-title">
-              <img
-                src="https://sujinhhh.github.io/deploy/mingle.png"
-                alt="uncle"
-              />
+              <img src="./ram.jpg" alt="uncle" />
               <h3>4월 새람 영어 평가 시험에 오신 것을 환영합니다.</h3>
             </div>
             {this.state.questionList.length > 0 &&

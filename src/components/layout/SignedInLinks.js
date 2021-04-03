@@ -1,11 +1,14 @@
 import React from "react";
 import { Link, NavLink, withRouter } from "react-router-dom";
-
+import "./link.css";
 const SignedLinks = () => {
   return (
     <ul className="signedLinks">
       <Link to="/" className="left brand-logo">
-        새람쓰~<small>쿨</small>
+        <div className="logo">
+          <img src="https://sujinhhh.github.io/deploy/mingle.png" alt="uncle" />
+          새람쓰~<small>쿨</small>
+        </div>
       </Link>
       <div className="right">
         <li>

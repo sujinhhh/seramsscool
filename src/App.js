@@ -11,6 +11,7 @@ import SignUp from "./components/auth/SignUp";
 import CreateProject from "./components/projects/CreateProject";
 import Footer from "./components/layout/Footer";
 import ProjectList from "./components/projects/ProjectList";
+// import { Result } from "./components/exam/Result";
 
 export default class App extends Component {
   render() {
@@ -27,6 +28,7 @@ export default class App extends Component {
             <Route path="/create" component={CreateProject} />
             <Route path="/exam" component={SeramTest} />
             <Route path="/todo" component={TodoRoot} />
+            {/* <Route path="/result" component={Result} /> */}
           </Switch>
           <Footer />
         </div>

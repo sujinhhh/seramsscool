@@ -14,20 +14,20 @@ import {
   getFirebase,
   ReactReduxFirebaseProvider,
 } from "react-redux-firebase";
-import fbConfig from "./config/fbConfig";
+import { firebaseApp } from "./config/fbConfig";
 import firebase from "firebase/app";
 
 const store = createStore(
   rootReducer,
   compose(
-    applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore }))
-    // reactReduxFirebase(fbConfig), // redux binding for firebase
-    // reduxFirestore(fbConfig) // redux bindings for firestore
+    applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
+    reactReduxFirebase(firebase), // redux binding for firebase
+    reduxFirestore(firebaseApp) // redux bindings for firestore
   )
 );
 const rrfProps = {
-  firebase,
-  config: fbConfig,
+  firebaseApp,
+  config: firebaseApp,
   dispatch: store.dispatch,
   createFirestoreInstance, // <- needed if using firestore
 };
