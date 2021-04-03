@@ -1,45 +1,56 @@
-import React, { Component } from "react";
+import React, { useRef } from "react";
+import { Card, makeStyles } from "@material-ui/core";
 
-export default class SignUp extends Component {
-  state = {
-    email: "",
-    password: "",
-    name: "",
-  };
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275,
+  },
+  bullet: {
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)",
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+});
 
-  handleChange = (e) => {
-    this.setState({
-      [e.target.id]: e.target.value,
-    });
-  };
+export default function SignUp() {
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
 
-  handleSubmit = (e) => {
+  const classes = useStyles();
+
+  const handleChange = (e) => {};
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
   };
 
-  render() {
-    return (
-      <div className="signin-container">
-        <form className="signin-form" onSubmit={this.handleSubmit}>
-          <h5>Sign In</h5>
-          <div className="signin-input">
-            <label htmlFor="name">이름</label>
-            <input type="name" id="name" onChange={this.handleChange} />
-          </div>
-          <div className="signin-input">
-            <label htmlFor="email">이메일</label>
-            <input type="email" id="email" onChange={this.handleChange} />
-          </div>
-          <div className="signin-input">
-            <label htmlFor="password">비밀번호</label>
-            <input type="password" id="password" onChange={this.handleChange} />
-          </div>
-          <div className="signin-input">
-            <button className="btn">등록하기</button>
-          </div>
-        </form>
-      </div>
-    );
-  }
+  return (
+    <Card className={classes.root}>
+      <form className="signin-form">
+        <h5>Sign In</h5>
+        <div className="signin-input">
+          <label htmlFor="name">이름</label>
+          <input type="name" id="name" ref={nameRef} />
+        </div>
+        <div className="signin-input">
+          <label htmlFor="email">이메일</label>
+          <input type="email" id="email" ref={emailRef} />
+        </div>
+        <div className="signin-input">
+          <label htmlFor="password">비밀번호</label>
+          <input type="password" id="password" ref={passwordRef} />
+        </div>
+        <div className="signin-input">
+          <button className="btn">등록하기</button>
+        </div>
+      </form>
+    </Card>
+  );
 }

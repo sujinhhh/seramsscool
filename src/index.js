@@ -20,14 +20,14 @@ import firebase from "firebase/app";
 const store = createStore(
   rootReducer,
   compose(
-    applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
-    reduxFirestore(firebase, fbConfig) // redux bindings for firestore
+    applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore }))
+    // reactReduxFirebase(fbConfig), // redux binding for firebase
+    // reduxFirestore(fbConfig) // redux bindings for firestore
   )
 );
-
 const rrfProps = {
-  fbConfig,
-  config: {},
+  firebase,
+  config: fbConfig,
   dispatch: store.dispatch,
   createFirestoreInstance, // <- needed if using firestore
 };

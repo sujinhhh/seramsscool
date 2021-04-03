@@ -14,6 +14,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.firestore();
+firebase.auth();
 
 // .settings({ timestampsInSnapshots: true });
 
