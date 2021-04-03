@@ -1,0 +1,41 @@
+.test-container {
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  padding-bottom: 50px;
+}
+
+.test-title {
+  padding-top: 20px;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+  box-shadow: 0 14px 28px rgba(240, 52, 199, 0.25),
+    0 10px 10px rgba(236, 234, 234, 0.22);
+}
+.test-title img {
+  width: 80px;
+  height: 100%;
+  border-radius: 70px;
+}
+.test-title h3 {
+  margin: 0;
+  text-align: center;
+  font-size: 2rem;
+  padding: 2rem 2rem;
+  border-radius: 30px;
+}
+
+.box-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+  padding: 0 50px;
+  padding-bottom: 30px;
+  border-radius: 50px;
+}
+
+.answerBtn {
+  display: flex;
+}
