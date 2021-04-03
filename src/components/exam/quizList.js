@@ -1,32 +1,31 @@
 const qBank = [
   {
     question: "1. What ( ) you do ? - 너 뭐하니?   ",
-    answers: ["did", "does", "do", "are", "is"],
+    answers: ["did", "does", "do", "are", "is", "am"],
     correct: "do",
     questionId: "099099",
   },
   {
-    question:
-      '2. Where is the train station "Llanfair­pwllgwyngyll­gogery­chwyrn­drobwll­llan­tysilio­gogo­goch"?',
-    answers: ["Wales", "Moldova", "Czech Republic", "Denmark"],
+    question: "2. Why () you go there ? - 너 거기 왜 갔니?",
+    answers: ["did", "does", "do", "are", "is", "am"],
     correct: "Wales",
     questionId: "183452",
   },
   {
     question: "3. Where () uncle go? - 삼촌은 어디 가니?",
-    answers: ["did", "does", "do", "are", "is"],
+    answers: ["did", "does", "do", "are", "is", "am"],
     correct: "HTC",
     questionId: "267908",
   },
   {
-    question: "4. What is Seha doing? - 새하는 (지금) 머하고 있니?",
-    answers: ["did", "does", "do", "are", "is"],
+    question: "4. What () Seha doing? - 새하는 (지금) 머하고 있니?",
+    answers: ["did", "does", "do", "are", "is", "am"],
     correct: "Thomas & Martha",
     questionId: "333247",
   },
   {
-    question: "5. What is the most common surname Wales?",
-    answers: ["Jones", "Williams", "Davies", "Evans"],
+    question: "5. Why () you learn English - 너 영어를 왜 배우니?",
+    answers: ["did", "does", "do", "are", "is", "am"],
     correct: "Jones",
     questionId: "496293",
   },

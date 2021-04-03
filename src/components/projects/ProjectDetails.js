@@ -1,4 +1,5 @@
 import React from "react";
+import { firestoreConnect } from "react-redux-firebase";
 
 const ProjectDetails = (props) => {
   const id = props.match.params.id;

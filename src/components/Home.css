@@ -6,4 +6,6 @@
   background-color: #f7b5c7;
   height: 100vh;
   z-index: -1;
+  display: flex;
+  justify-content: center;
 }
