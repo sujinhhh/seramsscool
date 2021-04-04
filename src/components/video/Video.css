@@ -1,0 +1,59 @@
+/* VIDEO ROOT */
+.videoRoot {
+}
+.videoRoot-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+}
+.video-container {
+  height: 500px;
+}
+
+/* ROW */
+
+.row {
+  margin-top: 3em;
+  background-color: #111;
+}
+.row h2 {
+  color: aliceblue;
+  font-size: 2.2rem;
+  text-align: center;
+}
+.row__posters {
+  padding: 30px;
+  transition: transform 450ms;
+}
+.row-container {
+}
+.row-video {
+  min-width: 500px;
+  position: relative;
+  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+}
+
+.video-info {
+  margin-top: 1em;
+}
+.title {
+  color: whitesmoke;
+  font-size: 1.2rem;
+}
+.video-info p {
+  color: skyblue;
+}
+
+/* Banner */
+.banner {
+}
+
+.banner__contents {
+  height: 70vh;
+  background-image: url("https://cdn.pixabay.com/photo/2018/08/31/08/35/toys-3644073_1280.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

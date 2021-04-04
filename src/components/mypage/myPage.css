@@ -1,0 +1,10 @@
+.mypageRoot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("https://cdn.pixabay.com/photo/2019/04/11/16/12/rabbit-4120085_1280.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

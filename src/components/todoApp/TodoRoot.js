@@ -1,15 +1,15 @@
 import React, { Component, useEffect, useState } from "react";
 import Todos from "./Todos";
 import AddForm from "./AddForm";
-import firebase from "../../config/fbConfig";
+import { firebaseStore } from "../../config/fbConfig";
 import "./todos.css";
+import firebase from "firebase";
 
 const TodoRoot = () => {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    firebase
-      .firestore()
+    firebaseStore
       .collection("todos")
       .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) => {
@@ -25,7 +25,7 @@ const TodoRoot = () => {
   };
 
   const addTodos = (todo) => {
-    firebase.firestore().collection("todos").add({
+    firebaseStore.collection("todos").add({
       todo: todo,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });

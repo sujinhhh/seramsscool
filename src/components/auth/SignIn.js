@@ -1,40 +1,51 @@
-import React, { Component } from "react";
+import React from "react";
+import GoogleLogin from "react-google-login";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectSignedIn,
+  setSignedIn,
+  setUserData,
+} from "../../features/userSlice";
 
-export default class SignIn extends Component {
-  state = {
-    email: "",
-    password: "",
+const SignIn = () => {
+  const isSignedIn = useSelector(selectSignedIn);
+
+  const dispatch = useDispatch();
+  const login = (response) => {
+    console.log(response);
+    dispatch(setSignedIn(true));
+    dispatch(setUserData(response.profileObj));
   };
 
-  handleChange = (e) => {
-    this.setState({
-      [e.target.id]: e.target.value,
-    });
-  };
+  return (
+    <div
+      className="signin-container"
+      style={{ display: isSignedIn ? "none" : "" }}
+    >
+      {!isSignedIn ? (
+        <div>
+          <GoogleLogin
+            clientId="622624101611-f42jvufneqkv0vf0nj47c4f6upv103da.apps.googleusercontent.com"
+            render={(renderProps) => (
+              <button
+                onClick={renderProps.onClick}
+                disabled={renderProps.disabled}
+                // className="login-button"
+              >
+                로그인 하기
+              </button>
+            )}
+            onSuccess={login}
+            onFailure={login}
+            isSignedIn={true}
+            cookiePolicy={"single_host_origin"}
+          />
+        </div>
+      ) : (
+        ""
+      )}
+    </div>
+  );
+};
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(this.state);
-  };
-
-  render() {
-    return (
-      <div className="signin-container">
-        <form className="signin-form" onSubmit={this.handleSubmit}>
-          <h5>Sign In</h5>
-          <div className="signin-input">
-            <label htmlFor="email">이메일</label>
-            <input type="email" id="email" onChange={this.handleChange} />
-          </div>
-          <div className="signin-input">
-            <label htmlFor="password">비밀번호</label>
-            <input type="password" id="password" onChange={this.handleChange} />
-          </div>
-          <div className="signin-input">
-            <button className="btn">로그인</button>
-          </div>
-        </form>
-      </div>
-    );
-  }
-}
+export default SignIn;
