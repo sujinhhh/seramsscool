@@ -1,18 +1,25 @@
 import React from "react";
-import { Link, NavLink, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
+import { selectSignedIn } from "../../features/userSlice";
+import { useSelector } from "react-redux";
+import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
 
 const NavBar = (props) => {
-  // 2초 뒤에 자동으로 이전 페이지로 가기 *****
-  // setTimeout(() => {
-  //   props.history.push("./bible");
-  // }, 2000);
+  const isSignedIn = useSelector(selectSignedIn);
   return (
-    <nav className="nav-waper red darken-3">
+    <nav
+      className="nav-waper red darken-3"
+      variant="h1"
+      style={{
+        height: "100px",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
       <div className="container">
-        <SignedInLinks />
-        {/* <SignedOutLinks /> */}
+        {isSignedIn ? <SignedInLinks /> : <SignedOutLinks />}
       </div>
     </nav>
   );
