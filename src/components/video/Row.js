@@ -30,12 +30,11 @@ function Row({ title, youVideo, isLargeRow }) {
             <ReactPlayer url={youVideo.video} width="100%" height="100%" />
           </div>
           <div className="video-info">
-            <p>{youVideo.hash}</p>
-
             <span className="title clamp">
               안녕하세요, 새람쓰~쿨입니다. <br />
               {youVideo.contents} <br />
             </span>
+            <p>{youVideo.hash}</p>
           </div>
         </div>
       </div>

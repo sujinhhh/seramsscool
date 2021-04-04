@@ -43,7 +43,7 @@ const SignedLinks = () => {
           <Link to="/exam"> 영어시험</Link>
         </li>
         <li>
-          <Link to="/video">솰라솰라 비디오</Link>
+          <Link to="/video">솰라솰라</Link>
         </li>
         <li>
           <Link to="/mypage">마이 페이지</Link>

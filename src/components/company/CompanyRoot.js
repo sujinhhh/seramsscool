@@ -1,7 +1,14 @@
 import React from "react";
+import "./Company.css";
 
 const CompanyRoot = () => {
-  return <div>Seramss Cool 소개</div>;
+  return (
+    <div>
+      <div className="companyRoot">
+        <h1>Comming soon</h1>
+      </div>
+    </div>
+  );
 };
 
 export default CompanyRoot;
