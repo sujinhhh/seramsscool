@@ -7,9 +7,9 @@ import {
   setSignedIn,
   setUserData,
 } from "../../features/userSlice";
-import "./Signedlink.css";
+import "./Link.css";
 
-const SignedOut = () => {
+const SignedOut = ({ close, click }) => {
   const isSignedIn = useSelector(selectSignedIn);
 
   const dispatch = useDispatch();
@@ -27,13 +27,7 @@ const SignedOut = () => {
 
   return (
     <ul className="signoutLinks">
-      <Link to="/" className="left brand-logo">
-        <div className="logo">
-          <img src="https://sujinhhh.github.io/deploy/mingle.png" alt="uncle" />
-          <small>새.람.쓰.</small> 쿨~
-        </div>
-      </Link>
-      <div className="right">
+      <div className={click ? "nav-menu active" : "nav-menu"} onClick={close}>
         <li>
           <Link to="/"> Home</Link>
         </li>

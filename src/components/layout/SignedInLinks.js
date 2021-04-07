@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import "./Signedlink.css";
+import "./Link.css";
 import {
   selectSignedIn,
   setSignedIn,
@@ -12,7 +12,7 @@ import { Avatar, Button } from "@material-ui/core";
 import { GoogleLogout } from "react-google-login";
 import { useEffect } from "react";
 
-const SignedLinks = () => {
+const SignedLinks = ({ close, click }) => {
   const isSignedIn = useSelector(selectSignedIn);
   const userData = useSelector(selectUserData);
 
@@ -26,13 +26,7 @@ const SignedLinks = () => {
 
   return (
     <ul className="signedLinks">
-      <Link to="/" className="left brand-logo">
-        <div className="logo">
-          <img src="https://sujinhhh.github.io/deploy/mingle.png" alt="uncle" />
-          <small>새.람.쓰.</small> 쿨~
-        </div>
-      </Link>
-      <div className="right">
+      <div className={click ? "nav-menu active" : "nav-menu"} onClick={close}>
         <li>
           <Link to="/"> Home</Link>
         </li>
