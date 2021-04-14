@@ -1,4 +1,5 @@
-# Kids English School - A Website for English education
+# Kids English School - A Website for English education   
+
 
 
 <p align='center'>
@@ -8,12 +9,14 @@
 
 <p align='center'> " I will prepare and some day my chance will come." </p>
 
-## 📜 Pages
+## 📜 Pages [ 👉 Go to website](https://seramschool.web.app)
 
 - Home
 - English Programs
 - Testing
 - Videos
+
+
 
 <hr>
 
@@ -79,4 +82,4 @@
 </p>
 
 
-[Go to website](https://seramschool.web.app)
+
