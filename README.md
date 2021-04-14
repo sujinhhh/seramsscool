@@ -10,7 +10,6 @@
 <p align='center'> " I will prepare and some day my chance will come." </p>
 
 ## 📜 Pages 
-## [ 👉 Go to website](https://seramschool.web.app)
 
 - Home
 - English Programs
@@ -82,5 +81,6 @@
  <img src="https://sujinhhh.github.io/img/google.png" height='300'/>  <img src="https://sujinhhh.github.io/img/res.png" height='300'/>
 </p>
 
+## [ 👉 Go to website](https://seramschool.web.app)
 
 
