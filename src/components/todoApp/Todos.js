@@ -16,7 +16,7 @@ const Todos = ({ todos }) => {
               firebaseStore.collection("todos").doc(item.id).delete()
             }
           >
-            삭제
+            Delate
           </button>
         </div>
       ))}

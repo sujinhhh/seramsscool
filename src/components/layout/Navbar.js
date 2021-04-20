@@ -47,8 +47,8 @@ const NavBar = (props) => {
     <nav className="navbar">
       <Link to="/" className="left brand-logo" onClick={closeMobileMenu}>
         <div className="logo">
-          <img src="https://sujinhhh.github.io/deploy/mingle.png" alt="uncle" />
-          <small>새.람.쓰.</small> 쿨~
+          <img src="http://sulbi.link/images/aa.gif" alt="uncle" />
+          <small>Seramss</small> Cool~
         </div>
       </Link>
 

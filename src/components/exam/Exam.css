@@ -39,3 +39,12 @@
 .answerBtn {
   display: flex;
 }
+
+@media screen and (max-width: 600px) {
+  .test-title h3 {
+    font-size: 1.5rem;
+  }
+  .question-container h3 {
+    font-size: 2rem;
+  }
+}

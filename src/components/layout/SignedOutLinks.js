@@ -32,14 +32,15 @@ const SignedOut = ({ close, click }) => {
           <Link to="/"> Home</Link>
         </li>
         <li>
-          <Link to="/company"> 새람쓰~쿨 소개</Link>
+          <Link to="/study"> English Programs </Link>
         </li>
         <li>
-          <Link to="/review"> 수강 후기 </Link>
+          <Link to="/exam"> Testing </Link>
         </li>
         <li>
-          <Link to="/"> 발표</Link>
+          <Link to="/video"> Videos </Link>
         </li>
+
         <li>
           {!isSignedIn ? (
             <div>
@@ -51,7 +52,7 @@ const SignedOut = ({ close, click }) => {
                     disabled={renderProps.disabled}
                     className="login-button"
                   >
-                    로그인
+                    Login
                   </button>
                 )}
                 onSuccess={login}

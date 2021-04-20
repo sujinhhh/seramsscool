@@ -21,10 +21,10 @@ class AddForm extends Component {
     return (
       <div className="form-input">
         <form onSubmit={this.handleSubmit}>
-          <label>New Todos</label>
+          <label>blackboard</label>
           <input
             className="input"
-            placeholder="여기에 아무말이나 적어보세요"
+            placeholder="Say anything here🙂"
             type="text"
             onChange={this.handleChange}
             value={this.state.content}

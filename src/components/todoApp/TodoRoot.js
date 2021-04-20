@@ -36,7 +36,7 @@ const TodoRoot = () => {
       <div className="todo-container">
         <div className="todo-title">
           <img src="./dasy.png" alt="cherry" />
-          <h1>선생님 할말 있어요~</h1>
+          <h1>Say Something~</h1>
           <img src="./dasy.png" alt="cherry" />
         </div>
         <Todos todos={todos} deleteTodo={deleteTodo} />
