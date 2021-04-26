@@ -2,19 +2,38 @@ import React, { useState, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
 import SignedInLinks from "./SignedInLinks";
 import SignedOutLinks from "./SignedOutLinks";
-import { selectSignedIn } from "../../features/userSlice";
-import { useSelector } from "react-redux";
+import { login, logout, selectUser } from "../../features/userSlice";
+import { useSelector, useDispatch } from "react-redux";
 import { Menu, MenuItem, ListItemText } from "@material-ui/core";
 import { MenuTwoTone, AccessAlarm, Close } from "@material-ui/icons";
 import { withStyles } from "@material-ui/core/styles";
 import "./Navbar.css";
 import "./Link.css";
+import { auth } from "../../config/fbConfig";
 
 const NavBar = (props) => {
-  const isSignedIn = useSelector(selectSignedIn);
+  const user = useSelector(selectUser);
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
   const [show, handleShow] = useState(false);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((userAuth) => {
+      if (userAuth) {
+        // user is logged in
+        dispatch(
+          login({
+            email: userAuth.email,
+            uid: userAuth.uid,
+            displayName: userAuth.displayName,
+          })
+        );
+      } else {
+        dispatch(logout());
+      }
+    });
+  }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -53,10 +72,10 @@ const NavBar = (props) => {
       </Link>
 
       <div>
-        {isSignedIn ? (
-          <SignedInLinks close={closeMobileMenu} click={click} />
-        ) : (
+        {!user ? (
           <SignedOutLinks close={closeMobileMenu} click={click} />
+        ) : (
+          <SignedInLinks close={closeMobileMenu} click={click} />
         )}
       </div>
       <sapn

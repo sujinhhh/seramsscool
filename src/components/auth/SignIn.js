@@ -2,12 +2,7 @@ import React, { useRef, useState } from "react";
 import GoogleLogin from "react-google-login";
 import { auth } from "../../config/fbConfig";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  selectSignedIn,
-  setSignedIn,
-  setUserData,
-} from "../../features/userSlice";
-
+import { login } from "../../features/userSlice";
 import "./SignInUp.css";
 import { authIsReady } from "react-redux-firebase";
 
@@ -19,6 +14,15 @@ const SignIn = () => {
 
   const loginToApp = (e) => {
     e.preventDefault();
+    auth.signInWithEmailAndPassword(email, password).then((userAuth) => {
+      dispatch(
+        login({
+          email: userAuth.user.email,
+          uid: userAuth.user.uid,
+          displayName: userAuth.user,
+        })
+      );
+    });
   };
   const resister = () => {
     if (!name) {
@@ -31,19 +35,20 @@ const SignIn = () => {
         })
         .then(() => {
           dispatch(
-            setSignedIn({
+            login({
               email: userAuth.user.email,
               uid: userAuth.user.uid,
               displayName: name,
             })
           );
-        });
+        })
+        .catch((error) => alert(error));
     });
   };
 
   return (
     <div className="signin">
-      <div class="signin__container">
+      <div className="signin__container">
         <div className="login__header">
           <img
             src="https://cdn.pixabay.com/photo/2015/12/08/19/08/castle-1083570_1280.png"
@@ -51,46 +56,46 @@ const SignIn = () => {
           />
           <h3>Log In</h3>
         </div>
-        <form class="col s12 ">
-          <div class="">
-            <div class="input-field col s6">
+        <form className="col s12 ">
+          <div className="">
+            <div className="input-field col s6">
               <input
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 id="first_name"
                 type="text"
-                class="validate"
+                className="validate"
                 placeholder="Full Name"
               />
             </div>
           </div>
 
-          <div class="">
-            <div class="input-field col s12">
+          <div className="">
+            <div className="input-field col s12">
               <input
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 id="password"
                 type="password"
-                class="validate"
+                className="validate"
                 placeholder="Password"
               />
             </div>
           </div>
-          <div class="">
-            <div class="input-field col s12">
+          <div className="">
+            <div className="input-field col s12">
               <input
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 id="email"
                 type="email"
-                class="validate"
+                className="validate"
                 placeholder="Email"
               />
             </div>
           </div>
         </form>
-        <button className="btn" onClick={loginToApp}>
+        <button type="submit" className="btn" onClick={loginToApp}>
           Log In
         </button>
         <div className="signin__signup">

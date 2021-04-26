@@ -2,29 +2,15 @@ import React from "react";
 import { Link, withRouter } from "react-router-dom";
 import GoogleLogin from "react-google-login";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  selectSignedIn,
-  setSignedIn,
-  setUserData,
-} from "../../features/userSlice";
+import { selectUser } from "../../features/userSlice";
 import "./Link.css";
+import { auth } from "../../config/fbConfig";
 
 const SignedOut = ({ close, click }) => {
-  const isSignedIn = useSelector(selectSignedIn);
-
+  const user = useSelector(selectUser);
   const dispatch = useDispatch();
-  const login = (response) => {
-    console.log(response);
-    dispatch(setSignedIn(true));
-    dispatch(setUserData(response.profileObj));
-  };
 
-  const logout = (response) => {
-    console.log(response);
-    dispatch(setSignedIn(false));
-    dispatch(setUserData(null));
-  };
-
+  const login = () => {};
   return (
     <ul className="signoutLinks">
       <div className={click ? "nav-menu active" : "nav-menu"} onClick={close}>
@@ -42,32 +28,20 @@ const SignedOut = ({ close, click }) => {
         </li>
 
         <li>
-          {!isSignedIn ? (
+          {/* <Link to="/signin">
+            <button onClick={login}>Log in</button>
+          </Link> */}
+
+          {!user ? (
             <div>
-              <GoogleLogin
-                clientId="622624101611-f42jvufneqkv0vf0nj47c4f6upv103da.apps.googleusercontent.com"
-                render={(renderProps) => (
-                  <button
-                    onClick={renderProps.onClick}
-                    disabled={renderProps.disabled}
-                    className="login-button"
-                  >
-                    Login
-                  </button>
-                )}
-                onSuccess={login}
-                onFailure={logout}
-                isSignedIn={true}
-                cookiePolicy={"single_host_origin"}
-              />
+              <Link to="/signin">
+                <button onClick={login}>Log in</button>
+              </Link>
             </div>
           ) : (
             ""
           )}
         </li>
-        {/* <li>
-          <Link to="/signup"> Sign Up </Link>
-        </li> */}
       </div>
     </ul>
   );
