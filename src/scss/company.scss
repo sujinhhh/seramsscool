@@ -1,0 +1,61 @@
+@use './abstracts/' as *;
+@use 'sass:map';
+
+$columns: 12;
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  color: wheat;
+}
+
+[class^="col-"] {
+  flex-basis: 100%;
+}
+
+@media (min-width: 960px) {
+  @for $i from 1 through 4 {
+    .col-#{$i} {
+      flex: 0 0 (100% / (4 / $i));
+      border: 1px solid red;
+    }
+    .col-offset-#{$i} {
+      margin-left: 100% / ($columns/$i);
+    }
+  }
+}
+
+$breakingpoints: (
+  small: 40em,
+  medium: 65em,
+  large: 90em,
+);
+
+@mixin mq($key) {
+  $size: map.get($breakingpoints, $key);
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+.companyRoot {
+  background-color: green;
+  padding: 1em;
+  font-size: $font-size;
+
+  &__title {
+    font-size: $font-size;
+    color: $red;
+    @include mq(small) {
+      padding: 1em;
+      color: mix($red, white, 70%);
+    }
+  }
+}
+
+.btn {
+  background-color: black;
+  @include mq(medium) {
+    color: blueviolet;
+  }
+}
