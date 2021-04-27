@@ -18,6 +18,9 @@ const SignedOut = ({ close, click }) => {
           <Link to="/"> Home</Link>
         </li>
         <li>
+          <Link to="/company"> Company </Link>
+        </li>
+        <li>
           <Link to="/study"> English Programs </Link>
         </li>
         <li>
@@ -28,19 +31,17 @@ const SignedOut = ({ close, click }) => {
         </li>
 
         <li>
-          {/* <Link to="/signin">
-            <button onClick={login}>Log in</button>
-          </Link> */}
-
-          {!user ? (
-            <div>
-              <Link to="/signin">
+          <Link to="/">
+            {!user ? (
+              <div>
+                {/* <Link to="/signin"> */}
                 <button onClick={login}>Log in</button>
-              </Link>
-            </div>
-          ) : (
-            ""
-          )}
+                {/* </Link> */}
+              </div>
+            ) : (
+              ""
+            )}
+          </Link>
         </li>
       </div>
     </ul>
