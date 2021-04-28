@@ -3,17 +3,30 @@ import "../../scss/company.scss";
 
 const CompanyRoot = () => {
   return (
-    <div>
-      <div className="companyRoot">
-        <h1 className="companyRoot__title">Comming soon</h1>
-        <button className="btn"> click</button>
-      </div>
-      <div className="row">
-        <div className="col-1">hahah</div>
-        <div className="col-2">hahah</div>
-        <div className="col-3">hahah</div>
-        <div className="col-4">hahah</div>
-      </div>
+    <div className="companyRoot">
+      <header>
+        <div className="companyRoot__nav">
+          <span className="companyRoot__burger"></span>
+        </div>
+        <div className="companyRoot__menu">
+          <ul>
+            <li className="companyRoot__item">
+              <a href="#about">About us</a>
+            </li>
+            <li className="companyRoot__item">
+              <a href="#teacher">Instructor</a>
+            </li>
+            <li className="companyRoot__item">
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <main>
+        <div className="article">
+          <h1>설명</h1>
+        </div>
+      </main>
     </div>
   );
 };

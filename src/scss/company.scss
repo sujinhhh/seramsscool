@@ -1,19 +1,13 @@
-@use './abstracts/colors' as *;
-@use './abstracts/fonts' as *;
+@import "./abstracts/vaiables";
+@import "./abstracts/company";
 
-:root {
-  @each $color, $shades in $colors {
-    @each $shade, $value in $shades {
-      --clr-#{$color}-#{$shade}: #{$value};
-    }
-  }
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
 
-  @each $screen-size, $font-size in $type-scale {
-    @if $screen-size == small {
-      @each $size, $value in $font-size {
-        --fs-#{$size}: #{$value};
-      }
-    } @else {
-    }
-  }
+a {
+  color: #000;
+  text-decoration: none;
 }

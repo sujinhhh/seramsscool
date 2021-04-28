@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../src/scss/company.scss"],"names":[],"mappings":"AAGA;EAGM;EAOE","file":"company.css"}
+{"version":3,"sourceRoot":"","sources":["../../src/scss/abstracts/_resets.scss","../../src/scss/company.scss","../../src/scss/abstracts/_vaiables.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;;;ACyBF;EArBE;EACA;EACA;EACA,gBAmBoB;EACpB,YC9Bc;ED+Bd;;AACA;EACE;;AACA;EACE;;AAGJ;EACE;;AAhBF;EAKF;IAcI;;;;AAGJ;EACE;EACA,OC7CW;;AD8CX;EACE;;;AAIJ;EApCI;EACA,OChBS","file":"company.css"}

@@ -1,0 +1,43 @@
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.companyRoot {
+  height: 100vh;
+  background: linear-gradient(
+      to bottom,
+      rgba($secondary-color, 0.8),
+      rgba($secondary-color, 0)
+    ),
+    url("https://cdn.pixabay.com/photo/2016/10/25/13/54/watercolour-1768921_1280.jpg");
+  background-size: cover;
+  width: 100%;
+
+  object-fit: contain;
+  &__menu {
+    ul {
+      display: flex;
+    }
+    li {
+      padding: 2rem;
+    }
+  }
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding-top: 40vh;
+  @include flex-center(culumn);
+}
+
+.article {
+  background-color: $container-color;
+  position: absolute;
+  top: 70px;
+  width: 500px;
+  height: 40vh;
+}
