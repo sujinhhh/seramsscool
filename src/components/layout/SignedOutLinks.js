@@ -31,7 +31,7 @@ const SignedOut = ({ close, click }) => {
         </li>
 
         <li>
-          <Link to="/">
+          <Link to="/signin">
             {!user ? (
               <div>
                 {/* <Link to="/signin"> */}

@@ -1,15 +1,22 @@
 $primary-color: #272727;
 $secondary-color: #f385f6;
+$third-color: rgb(175, 84, 4);
 $container-color: #fff;
-
 $accent-color: red;
 $text-color: #fff;
-$sub-text-color: #ffff00;
+$sub-text-color: #9b036b;
 $second-nav-background: pink;
+$linear-gradient01: #a18cd1;
+$linear-gradient02: #fbc2eb;
 $font-weight: (
   "regular": 400,
   "medium": 500,
   "bold": 900,
+);
+$font-size: (
+  "title": 2rem,
+  "sub-title": 1.5rem,
+  "article": 1.2rem,
 );
 
 $mobile: 800px;

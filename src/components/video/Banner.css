@@ -12,6 +12,8 @@ h1 {
   margin-left: 30px;
   padding-top: 140px;
   height: 190px;
+  background-color: aliceblue;
+  border: 5px solid red;
 }
 .banner__title {
   font-size: 3rem;
