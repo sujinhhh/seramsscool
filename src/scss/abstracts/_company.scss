@@ -1,0 +1,127 @@
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.companyRoot {
+  height: 100vh;
+  background: linear-gradient(
+      to bottom,
+      rgba($secondary-color, 0.9),
+      rgba($secondary-color, 0)
+    ),
+    url("https://cdn.pixabay.com/photo/2016/10/25/13/54/watercolour-1768921_1280.jpg");
+  background-size: cover;
+  width: 100%;
+
+  object-fit: contain;
+  &__nav {
+    opacity: 0, 98;
+    visibility: hidden;
+
+    ul {
+      display: flex;
+      list-style-type: none;
+      transform: translateY(-100%);
+      @include transition-ease;
+      &.open {
+        transform: translateY(0);
+      }
+    }
+    li {
+      padding: 2rem;
+    }
+    a {
+      color: set-text-color($secondary-color);
+    }
+    &.open {
+      visibility: visible;
+    }
+  }
+  &__item {
+    display: inline-block;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding: 2rem 0;
+    & :hover {
+      color: $sub-text-color;
+    }
+
+    &.active > a {
+      color: $accent-color;
+    }
+  }
+  &__menu {
+    position: absolute;
+    z-index: 1;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+  }
+  &__burger {
+    position: absolute;
+    right: 0;
+    top: 0.5rem;
+    width: 28px;
+    height: 4px;
+    background: grey;
+    @include transition-ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -8px;
+      width: 28px;
+      height: 4px;
+      background: set-text-color($secondary-color);
+      @include transition-ease;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      width: 28px;
+      height: 4px;
+      background: red;
+      @include transition-ease;
+    }
+    &.open {
+      transform: rotate(720deg);
+      background: transparent;
+      &::before {
+        transform: rotate(45deg) translate(5px, 8px);
+      }
+      &::after {
+        transform: rotate(-45deg) translate(3px, -7px);
+      }
+    }
+  }
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding-top: 40vh;
+  @include flex-center(culumn);
+}
+
+.article {
+  background-color: $container-color;
+  position: absolute;
+  top: 70px;
+  width: 500px;
+  height: 40vh;
+  h1 {
+    color: set-text-color($container-color);
+  }
+}
+
+@for $i from 1 through 3 {
+  .companyRoot__item:nth-child(#{$i}) {
+    @include transition-ease;
+
+    transition-delay: ($i * 0.1s) + 0.3s;
+  }
+}

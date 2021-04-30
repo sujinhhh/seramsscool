@@ -1,0 +1,40 @@
+$primary-color: #272727;
+$secondary-color: #f385f6;
+$container-color: #fff;
+
+$accent-color: red;
+$text-color: #fff;
+$sub-text-color: #ffff00;
+$second-nav-background: pink;
+$font-weight: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 900,
+);
+
+$mobile: 800px;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin transition-ease {
+  transition: all 0.5s ease-in-out;
+}
+@mixin flex-center($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@function set-text-color($color) {
+  @if (lightness($color) > 40%) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}

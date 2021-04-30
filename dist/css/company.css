@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.companyRoot {
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(243, 133, 246, 0.9), rgba(243, 133, 246, 0)), url("https://cdn.pixabay.com/photo/2016/10/25/13/54/watercolour-1768921_1280.jpg");
+  background-size: cover;
+  width: 100%;
+  object-fit: contain;
+}
+.companyRoot__nav {
+  opacity: 0, 98;
+  visibility: hidden;
+}
+.companyRoot__nav ul {
+  display: flex;
+  list-style-type: none;
+  transform: translateY(-100%);
+  transition: all 0.5s ease-in-out;
+}
+.companyRoot__nav ul.open {
+  transform: translateY(0);
+}
+.companyRoot__nav li {
+  padding: 2rem;
+}
+.companyRoot__nav a {
+  color: #000;
+}
+.companyRoot__nav.open {
+  visibility: visible;
+}
+.companyRoot__item {
+  display: inline-block;
+  font-size: 1rem;
+  text-transform: uppercase;
+  padding: 2rem 0;
+}
+.companyRoot__item :hover {
+  color: #ffff00;
+}
+.companyRoot__item.active > a {
+  color: red;
+}
+.companyRoot__menu {
+  position: absolute;
+  z-index: 1;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+.companyRoot__burger {
+  position: absolute;
+  right: 0;
+  top: 0.5rem;
+  width: 28px;
+  height: 4px;
+  background: grey;
+  transition: all 0.5s ease-in-out;
+}
+.companyRoot__burger::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  width: 28px;
+  height: 4px;
+  background: #000;
+  transition: all 0.5s ease-in-out;
+}
+.companyRoot__burger::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 28px;
+  height: 4px;
+  background: red;
+  transition: all 0.5s ease-in-out;
+}
+.companyRoot__burger.open {
+  transform: rotate(720deg);
+  background: transparent;
+}
+.companyRoot__burger.open::before {
+  transform: rotate(45deg) translate(5px, 8px);
+}
+.companyRoot__burger.open::after {
+  transform: rotate(-45deg) translate(3px, -7px);
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding-top: 40vh;
+  display: flex;
+  flex-direction: culumn;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.article {
+  background-color: #fff;
+  position: absolute;
+  top: 70px;
+  width: 500px;
+  height: 40vh;
+}
+.article h1 {
+  color: #000;
+}
+
+.companyRoot__item:nth-child(1) {
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.4s;
+}
+
+.companyRoot__item:nth-child(2) {
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.5s;
+}
+
+.companyRoot__item:nth-child(3) {
+  transition: all 0.5s ease-in-out;
+  transition-delay: 0.6s;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=company.css.map */

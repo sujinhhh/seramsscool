@@ -1,0 +1,38 @@
+.signin {
+  display: flex;
+  justify-content: center;
+}
+.signin form {
+  margin-bottom: 20px;
+}
+.signin__container {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+.login__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.signin__container img {
+  width: 100px;
+  margin-right: 2rem;
+}
+
+.signin__signup {
+  justify-content: center;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.signin__signup :nth-child(2) {
+  padding-left: 2rem;
+  color: brown;
+  cursor: pointer;
+}

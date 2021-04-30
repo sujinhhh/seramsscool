@@ -1,38 +1,25 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import "./Signedlink.css";
-import {
-  selectSignedIn,
-  setSignedIn,
-  setUserData,
-  selectUserData,
-} from "../../features/userSlice";
+import "./Link.css";
+import { login, logout, selectUser } from "../../features/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Avatar, Button } from "@material-ui/core";
 import { GoogleLogout } from "react-google-login";
 import { useEffect } from "react";
+import { auth } from "../../config/fbConfig";
 
-const SignedLinks = () => {
-  const isSignedIn = useSelector(selectSignedIn);
-  const userData = useSelector(selectUserData);
-
+const SignedLinks = ({ close, click }) => {
+  const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
-  const logout = (response) => {
-    console.log(response);
-    dispatch(setSignedIn(false));
-    dispatch(setUserData(null));
+  const logout = () => {
+    // dispatch(logout());
+    auth.signOut();
   };
 
   return (
     <ul className="signedLinks">
-      <Link to="/" className="left brand-logo">
-        <div className="logo">
-          <img src="https://sujinhhh.github.io/deploy/mingle.png" alt="uncle" />
-          <small>새.람.쓰.</small> 쿨~
-        </div>
-      </Link>
-      <div className="right">
+      <div className={click ? "nav-menu active" : "nav-menu"} onClick={close}>
         <li>
           <Link to="/"> Home</Link>
         </li>
@@ -50,13 +37,11 @@ const SignedLinks = () => {
         </li>
         <li>
           <Link to="/">
-            {isSignedIn ? (
+            {user ? (
               <div className="signedIn-info">
-                <div className="avatar">
-                  <Avatar src={userData?.imageUrl} alt={userData?.name} />
-                  <h5 className="signedIn-title">{userData?.givenName}</h5>
-                </div>
-
+                <div className="avatar"></div>
+                <button onClick={logout}>Log out</button>
+                {/* 
                 <GoogleLogout
                   clientId="622624101611-f42jvufneqkv0vf0nj47c4f6upv103da.apps.googleusercontent.com"
                   render={(renderProps) => (
@@ -69,7 +54,7 @@ const SignedLinks = () => {
                     </button>
                   )}
                   onLogoutSuccess={logout}
-                />
+                /> */}
               </div>
             ) : (
               ""

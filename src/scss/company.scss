@@ -1,0 +1,13 @@
+@import "./abstracts/vaiables";
+@import "./abstracts/company";
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+}
+
+a {
+  color: set-text-color($primary-color);
+  text-decoration: none;
+}

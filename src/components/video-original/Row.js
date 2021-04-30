@@ -31,7 +31,7 @@ function Row({ title, youVideo, isLargeRow }) {
           </div>
           <div className="video-info">
             <span className="title clamp">
-              Hi, This is SeramssCool! <br />
+              안녕하세요, 새람쓰~쿨입니다. <br />
               {youVideo.contents} <br />
             </span>
             <p>{youVideo.hash}</p>
