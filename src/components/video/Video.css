@@ -48,14 +48,16 @@
 
 /* Banner */
 .banner {
-}
-
-.banner__contents {
   height: 70vh;
   background-image: url("https://cdn.pixabay.com/photo/2018/08/31/08/35/toys-3644073_1280.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
+}
+
+.banner__contents {
+  position: relative;
 }
 
 @media screen and (max-width: 960px) {
