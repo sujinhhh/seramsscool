@@ -1,0 +1,10 @@
+.reviewRoot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("https://cdn.pixabay.com/photo/2019/06/11/20/50/kids-4267849_1280.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

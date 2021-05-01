@@ -57,11 +57,8 @@ class SeramTest extends Component {
         ) : (
           <div>
             <div className="test-title">
-              <img
-                src="https://sujinhhh.github.io/deploy/mingle.png"
-                alt="uncle"
-              />
-              <h3>4월 새람 영어 평가 시험에 오신 것을 환영합니다.</h3>
+              <img src="./ram.jpg" alt="uncle" />
+              <h3>Welcome to English Level Test!</h3>
             </div>
             {this.state.questionList.length > 0 &&
               this.state.responses < 10 &&
@@ -80,7 +77,7 @@ class SeramTest extends Component {
 
             <div className="test-title">
               <img src="./he2.jpg" alt="uncle" />
-              <h3>수고하셨습니다</h3>
+              <h3>Good Job!</h3>
               <Button
                 variant="contained"
                 color="secondary"
@@ -88,7 +85,7 @@ class SeramTest extends Component {
                 onClick={this.handleClick}
                 style={{ height: "50px" }}
               >
-                점수 확인
+                Check your Score
               </Button>
             </div>
           </div>

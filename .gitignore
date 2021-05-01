@@ -23,7 +23,10 @@ yarn-debug.log*
 yarn-error.log*
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/master
 .firebase/
 .firebaserc
 firebase.json

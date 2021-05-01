@@ -1,40 +1,110 @@
-import React, { Component } from "react";
+import React, { useRef, useState } from "react";
+import GoogleLogin from "react-google-login";
+import { auth } from "../../config/fbConfig";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../features/userSlice";
+import "./SignInUp.css";
+import { authIsReady } from "react-redux-firebase";
 
-export default class SignIn extends Component {
-  state = {
-    email: "",
-    password: "",
+const SignIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const dispatch = useDispatch();
+
+  const loginToApp = (e) => {
+    e.preventDefault();
+    auth.signInWithEmailAndPassword(email, password).then((userAuth) => {
+      dispatch(
+        login({
+          email: userAuth.user.email,
+          uid: userAuth.user.uid,
+          displayName: userAuth.user,
+        })
+      );
+    });
   };
-
-  handleChange = (e) => {
-    this.setState({
-      [e.target.id]: e.target.value,
+  const resister = () => {
+    if (!name) {
+      return alert("Please enter a full name");
+    }
+    auth.createUserWithEmailAndPassword(email, password).then((userAuth) => {
+      userAuth.user
+        .updateProfile({
+          displayName: name,
+        })
+        .then(() => {
+          dispatch(
+            login({
+              email: userAuth.user.email,
+              uid: userAuth.user.uid,
+              displayName: name,
+            })
+          );
+        })
+        .catch((error) => alert(error));
     });
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(this.state);
-  };
+  return (
+    <div className="signin">
+      <div className="signin__container">
+        <div className="login__header">
+          <img
+            src="https://cdn.pixabay.com/photo/2015/12/08/19/08/castle-1083570_1280.png"
+            alt=""
+          />
+          <h3>Log In</h3>
+        </div>
+        <form className="col s12 ">
+          <div className="">
+            <div className="input-field col s6">
+              <input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                id="first_name"
+                type="text"
+                className="validate"
+                placeholder="Full Name"
+              />
+            </div>
+          </div>
 
-  render() {
-    return (
-      <div className="signin-container">
-        <form className="signin-form" onSubmit={this.handleSubmit}>
-          <h5>Sign In</h5>
-          <div className="signin-input">
-            <label htmlFor="email">이메일</label>
-            <input type="email" id="email" onChange={this.handleChange} />
+          <div className="">
+            <div className="input-field col s12">
+              <input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                id="password"
+                type="password"
+                className="validate"
+                placeholder="Password"
+              />
+            </div>
           </div>
-          <div className="signin-input">
-            <label htmlFor="password">비밀번호</label>
-            <input type="password" id="password" onChange={this.handleChange} />
-          </div>
-          <div className="signin-input">
-            <button className="btn">로그인</button>
+          <div className="">
+            <div className="input-field col s12">
+              <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                id="email"
+                type="email"
+                className="validate"
+                placeholder="Email"
+              />
+            </div>
           </div>
         </form>
+        <button type="submit" className="btn" onClick={loginToApp}>
+          Log In
+        </button>
+        <div className="signin__signup">
+          <span>Not a member?</span>
+          <span onClick={resister}>Resister now</span>
+        </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+export default SignIn;

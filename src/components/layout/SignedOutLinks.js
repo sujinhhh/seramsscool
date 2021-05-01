@@ -1,34 +1,46 @@
 import React from "react";
-import { Link, NavLink, withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import GoogleLogin from "react-google-login";
+import { useDispatch, useSelector } from "react-redux";
+import { selectUser } from "../../features/userSlice";
+import "./Link.css";
+import { auth } from "../../config/fbConfig";
 
-const SignedOut = () => {
+const SignedOut = ({ close, click }) => {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  const login = () => {};
   return (
     <ul className="signoutLinks">
-      <Link to="/" className="left brand-logo">
-        새.람.하 <small>스쿨</small>
-      </Link>
-      <div className="right">
+      <div className={click ? "nav-menu active" : "nav-menu"} onClick={close}>
         <li>
           <Link to="/"> Home</Link>
         </li>
         <li>
-          <Link to="/exam"> 새람쓰~쿨 소개</Link>
+          <Link to="/company"> Company </Link>
         </li>
         <li>
-          <Link to="/exam"> 선생님 소개 </Link>
+          <Link to="/study"> English Programs </Link>
         </li>
         <li>
-          <Link to="/"> 발표</Link>
+          <Link to="/exam"> Testing </Link>
         </li>
         <li>
-          <Link to="/signin"> 로그인하기</Link>
+          <Link to="/video"> Videos </Link>
         </li>
+
         <li>
-          <Link to="/signup"> Sign Up </Link>
-        </li>
-        <li>
-          <Link to="/study" className="btn">
-            새람
+          <Link to="/signin">
+            {!user ? (
+              <div>
+                {/* <Link to="/signin"> */}
+                <button onClick={login}>Log in</button>
+                {/* </Link> */}
+              </div>
+            ) : (
+              ""
+            )}
           </Link>
         </li>
       </div>

@@ -34,6 +34,10 @@ export default function SignUp() {
   return (
     <Card className={classes.root}>
       <form className="signin-form">
+        <img
+          src="https://cdn.pixabay.com/photo/2015/12/08/19/08/castle-1083570_1280.png"
+          alt=""
+        />
         <h5>Sign In</h5>
         <div className="signin-input">
           <label htmlFor="name">이름</label>

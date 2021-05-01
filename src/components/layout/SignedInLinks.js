@@ -1,34 +1,64 @@
 import React from "react";
-import { Link, NavLink, withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import "./Link.css";
+import { login, logout, selectUser } from "../../features/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { Avatar, Button } from "@material-ui/core";
+import { GoogleLogout } from "react-google-login";
+import { useEffect } from "react";
+import { auth } from "../../config/fbConfig";
 
-const SignedLinks = () => {
+const SignedLinks = ({ close, click }) => {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  const logout = () => {
+    // dispatch(logout());
+    auth.signOut();
+  };
+
   return (
     <ul className="signedLinks">
-      <Link to="/" className="left brand-logo">
-        새람쓰~<small>쿨</small>
-      </Link>
-      <div className="right">
+      <div className={click ? "nav-menu active" : "nav-menu"} onClick={close}>
         <li>
           <Link to="/"> Home</Link>
         </li>
         <li>
-          <Link to="/exam"> 수업</Link>
+          <Link to="/study"> 수업</Link>
         </li>
         <li>
           <Link to="/exam"> 영어시험</Link>
         </li>
         <li>
-          <Link to="/dashboard"> projects</Link>
+          <Link to="/video">솰라솰라</Link>
         </li>
         <li>
-          <Link to="/create"> create</Link>
+          <Link to="/mypage">마이 페이지</Link>
         </li>
         <li>
-          <Link to="/"> Log Out</Link>
-        </li>
-        <li>
-          <Link to="/study" className="btn">
-            새람
+          <Link to="/">
+            {user ? (
+              <div className="signedIn-info">
+                <div className="avatar"></div>
+                <button onClick={logout}>Log out</button>
+                {/* 
+                <GoogleLogout
+                  clientId="622624101611-f42jvufneqkv0vf0nj47c4f6upv103da.apps.googleusercontent.com"
+                  render={(renderProps) => (
+                    <button
+                      onClick={renderProps.onClick}
+                      disabled={renderProps.disabled}
+                      className="logout-button"
+                    >
+                      로그아웃
+                    </button>
+                  )}
+                  onLogoutSuccess={logout}
+                /> */}
+              </div>
+            ) : (
+              ""
+            )}
           </Link>
         </li>
       </div>

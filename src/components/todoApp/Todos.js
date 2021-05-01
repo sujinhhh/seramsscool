@@ -1,5 +1,5 @@
 import React from "react";
-import firebase from "../../config/fbConfig";
+import { firebaseStore } from "../../config/fbConfig";
 import "./todos.css";
 
 const Todos = ({ todos }) => {
@@ -13,10 +13,10 @@ const Todos = ({ todos }) => {
           <button
             className="todo-btn"
             onClick={() =>
-              firebase.firestore().collection("todos").doc(item.id).delete()
+              firebaseStore.collection("todos").doc(item.id).delete()
             }
           >
-            삭제
+            Delate
           </button>
         </div>
       ))}

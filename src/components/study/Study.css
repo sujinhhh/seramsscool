@@ -1,0 +1,8 @@
+.study {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("https://cdn.pixabay.com/photo/2020/10/21/04/24/children-5672087_1280.png");
+  background-size: contain;
+}
