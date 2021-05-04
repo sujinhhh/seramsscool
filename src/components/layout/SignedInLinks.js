@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link, withRouter, useHistory } from "react-router-dom";
 import "./Link.css";
 import { login, logout, selectUser } from "../../features/userSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,10 +10,9 @@ import { auth } from "../../config/fbConfig";
 
 const SignedLinks = ({ close, click }) => {
   const user = useSelector(selectUser);
-  const dispatch = useDispatch();
+  const history = useHistory();
 
   const logout = () => {
-    // dispatch(logout());
     auth.signOut();
   };
 
@@ -40,7 +39,9 @@ const SignedLinks = ({ close, click }) => {
             {user ? (
               <div className="signedIn-info">
                 <div className="avatar"></div>
-                <button onClick={logout}>Log out</button>
+                <button className="log-btn btn-1" onClick={logout}>
+                  Log out
+                </button>
                 {/* 
                 <GoogleLogout
                   clientId="622624101611-f42jvufneqkv0vf0nj47c4f6upv103da.apps.googleusercontent.com"
