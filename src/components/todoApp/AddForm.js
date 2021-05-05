@@ -24,7 +24,7 @@ class AddForm extends Component {
           <label>blackboard</label>
           <input
             className="input"
-            placeholder="Say anything here🙂"
+            placeholder="Say something here🙂"
             type="text"
             onChange={this.handleChange}
             value={this.state.content}

@@ -10,7 +10,6 @@ import { auth } from "../../config/fbConfig";
 
 const SignedLinks = ({ close, click }) => {
   const user = useSelector(selectUser);
-  const history = useHistory();
 
   const logout = () => {
     auth.signOut();

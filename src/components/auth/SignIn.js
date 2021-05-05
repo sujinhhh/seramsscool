@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import GoogleLogin from "react-google-login";
+import { useHistory } from "react-router-dom";
 import { auth } from "../../config/fbConfig";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../features/userSlice";
@@ -11,18 +12,23 @@ const SignIn = () => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const loginToApp = (e) => {
+    history.push("/");
     e.preventDefault();
-    auth.signInWithEmailAndPassword(email, password).then((userAuth) => {
-      dispatch(
-        login({
-          email: userAuth.user.email,
-          uid: userAuth.user.uid,
-          displayName: userAuth.user,
-        })
-      );
-    });
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((userAuth) => {
+        dispatch(
+          login({
+            email: userAuth.user.email,
+            uid: userAuth.user.uid,
+            displayName: userAuth.user,
+          })
+        );
+      })
+      .catch((error) => console.warn(error.maessage));
   };
   const resister = () => {
     if (!name) {

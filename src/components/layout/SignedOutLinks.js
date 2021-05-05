@@ -36,7 +36,7 @@ const SignedOut = ({ close, click }) => {
               <div>
                 {/* <Link to="/signin"> */}
                 <button className="log-btn btn-1" onClick={login}>
-                  Log in
+                  LogIn | SignUp
                 </button>
                 {/* </Link> */}
               </div>

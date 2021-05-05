@@ -36,7 +36,7 @@ const TodoRoot = () => {
       <div className="todo-container">
         <div className="todo-title">
           <img src="./dasy.png" alt="cherry" />
-          <h1>Say Something~</h1>
+          <h1>Welcome to Seramss Cool</h1>
           <img src="./dasy.png" alt="cherry" />
         </div>
         <Todos todos={todos} deleteTodo={deleteTodo} />
