@@ -1,8 +1,74 @@
 .study {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-image: url("https://cdn.pixabay.com/photo/2020/10/21/04/24/children-5672087_1280.png");
-  background-size: contain;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#cfd9df), to(#e2ebf0));
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
+
+.study__program h1 {
+  text-align: center;
+  margin-top: 2rem;
+  color: #637e94;
+  font-size: 4rem;
+}
+
+.study__a, .study__b, .study__c, .study__d {
+  max-width: 800px;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 20px;
+  border: 1px solid white;
+  -webkit-box-shadow: 0 8px 8px rgba(58, 57, 57, 0.3);
+          box-shadow: 0 8px 8px rgba(58, 57, 57, 0.3);
+  margin: 4rem auto;
+}
+
+.study__a::before, .study__b::before, .study__c::before, .study__d::before {
+  padding: 1rem 2rem;
+  color: white;
+  font-weight: bold;
+  font-size: 4rem;
+  -webkit-box-shadow: 0 8px 8px rgba(58, 57, 57, 0.3);
+          box-shadow: 0 8px 8px rgba(58, 57, 57, 0.3);
+  position: relative;
+  margin: 2rem;
+  border-top: 13px solid transparent;
+  border-right: 26px solid;
+  border-bottom: 13px solid transparent;
+}
+
+.study__a h3, .study__b h3, .study__c h3, .study__d h3 {
+  padding: 0 2rem;
+  font-size: 1.2rem;
+}
+
+.study__a::before {
+  content: "A";
+  background-color: #44a8bc;
+}
+
+.study__b::before {
+  content: "B";
+  background-color: #49cecc;
+  font-size: 4rem;
+}
+
+.study__c::before {
+  content: "C";
+  background-color: #429fa2;
+}
+
+.study__d::before {
+  content: "D";
+  background-color: #71efd7;
+}
+/*# sourceMappingURL=Study.css.map */

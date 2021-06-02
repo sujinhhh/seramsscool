@@ -15,6 +15,7 @@ import MyPage from "./components/mypage/MyPage";
 import StudyRoot from "./components/study/StudyRoot";
 import ReviewRoot from "./components/memberReview/ReviewRoot";
 import CompanyRoot from "./components/company/CompanyRoot";
+import gameMain from "./components/game/gameMain";
 
 // import { Result } from "./components/exam/Result";
 
@@ -37,6 +38,7 @@ export default class App extends Component {
             <Route path="/study" component={StudyRoot} />
             <Route path="/review" component={ReviewRoot} />
             <Route path="/company" component={CompanyRoot} />
+            <Route path="/game" component={gameMain} />
           </Switch>
           <Footer />
         </div>

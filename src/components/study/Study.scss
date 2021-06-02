@@ -1,0 +1,68 @@
+.study {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  &__program {
+    h1 {
+      text-align: center;
+      margin-top: 2rem;
+      color: rgb(99, 126, 148);
+      font-size: 4rem;
+    }
+  }
+  &__a,
+  &__b,
+  &__c,
+  &__d {
+    max-width: 800px;
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 20px;
+    border: 1px solid white;
+    box-shadow: 0 8px 8px rgba(58, 57, 57, 0.3);
+    margin: 4rem auto;
+    &::before {
+      padding: 1rem 2rem;
+      color: white;
+      font-weight: bold;
+      font-size: 4rem;
+      box-shadow: 0 8px 8px rgba(58, 57, 57, 0.3);
+      position: relative;
+      margin: 2rem;
+      border-top: 13px solid transparent;
+      border-right: 26px solid;
+      border-bottom: 13px solid transparent;
+    }
+    h3 {
+      padding: 0 2rem;
+      font-size: 1.2rem;
+    }
+  }
+  &__a {
+    &::before {
+      content: "A";
+      background-color: #44a8bc;
+    }
+  }
+  &__b {
+    &::before {
+      content: "B";
+      background-color: #49cecc;
+      font-size: 4rem;
+    }
+  }
+  &__c {
+    &::before {
+      content: "C";
+      background-color: #429fa2;
+    }
+  }
+  &__d {
+    &::before {
+      content: "D";
+      background-color: #71efd7;
+    }
+  }
+}

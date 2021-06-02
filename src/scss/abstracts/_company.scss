@@ -1,3 +1,5 @@
+@import "./media";
+
 header {
   position: fixed;
   z-index: 2;
@@ -115,6 +117,9 @@ header {
     box-shadow: 5px 5px 15px rgba(68, 68, 68, 0.5);
     padding: 4rem;
     border-radius: 30px;
+    @include tablet {
+      width: 90vw;
+    }
   }
   &__about {
     position: relative;
@@ -133,9 +138,16 @@ header {
       padding: 1rem;
       transform: rotate(20deg) translate((6rem, -1rem));
       box-shadow: 5px 5px 15px rgba(145, 4, 82, 0.5);
+      @include tablet {
+        font-size: 1.5rem;
+        transform: rotate(20deg) translate((2rem, -7rem));
+      }
     }
     img {
       width: 400px;
+      @include tablet {
+        width: 250px;
+      }
     }
     p {
       border-top: 5px solid $third-color;
@@ -156,6 +168,14 @@ header {
     }
     &:nth-child(1) {
     }
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 85vw;
+      padding: 1rem;
+    }
   }
 
   &__person {
@@ -164,6 +184,7 @@ header {
     overflow: hidden;
     position: relative;
     @include flex-center(column);
+
     img {
       margin-bottom: 20px;
       width: 100%;
