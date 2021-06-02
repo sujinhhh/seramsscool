@@ -1,77 +1,69 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./game.css";
 
-function gameMain() {
-  const flip = () => {};
-  const success = () => {};
-  const fail = () => {};
-  const reset = () => {};
+export default function GameMain() {
+  const [openedCard, setOpenedCard] = useState([]);
+  const [matched, setMatched] = useState([]);
+
+  const pokemons = [
+    { id: 1, name: "Fun English Game", url: "/game/01.gif" },
+    { id: 2, name: "Only Speak English", url: "/game/02.gif" },
+    { id: 3, name: "Exams for School", url: "/game/03.gif" },
+    { id: 4, name: "Movie English", url: "/game/04.gif" },
+  ];
+  const welcome = { id: 4, name: "Are you Ready?!", url: "/game/me.png" };
+
+  //currently there are 4 pokemons but we need the pair
+
+  const pairOfPokemons = [...pokemons, ...pokemons, welcome];
+
+  function flipCard(index) {
+    setOpenedCard((opened) => [...opened, index]);
+  }
+
+  useEffect(() => {
+    if (openedCard < 2) return;
+
+    const firstMatched = pairOfPokemons[openedCard[0]];
+    const secondMatched = pairOfPokemons[openedCard[1]];
+
+    if (secondMatched && firstMatched.id === secondMatched.id) {
+      setMatched([...matched, firstMatched.id]);
+    }
+
+    if (openedCard.length === 2) setTimeout(() => setOpenedCard([]), 1000);
+  }, [openedCard]);
 
   return (
     <div className="game">
-      <div className="game__title">
-        <h1>Check our cool features!</h1>
+      <div className="game-title">
+        <h1>Check out our Cool features</h1>
       </div>
-      <div className="game__container">
-        <div className="card" data-image="01">
-          <div className="group1">
-            <img src="/game/01.gif" alt="note" />
-            <span>Movie English</span>
-          </div>
-          <img class="card__back" src="/game/lightbulb.gif" alt="lightbulb" />
-        </div>
-        <div className="card " data-image="01">
-          <div className="group1">
-            <img src="/game/01.gif" alt="note" />
-            <span>Movie English</span>
-          </div>
-          <img class="card__back" src="/game/lightbulb.gif" alt="lightbulb" />
-        </div>
-        <div className="card" data-image="02">
-          <div className="group2">
-            <img src="/game/02.gif" alt="note" />
-            <span>Fun English Game</span>
-          </div>
-          <img class="card__back" src="/game/lightbulb.gif" alt="lightbulb" />
-        </div>
-        <div className="card" data-image="02">
-          <div className="group2">
-            <img src="/game/02.gif" alt="note" />
-            <span>Fun English Game</span>
-          </div>
-          <img class="card__back" src="/game/lightbulb.gif" alt="lightbulb" />
-        </div>
-        <div className="card" data-image="03">
-          <div className="group3">
-            <img src="/game/03.gif" alt="note" />
-            <span>Only Speak English</span>
-          </div>
-          <img class="card__back" src="/game/lightbulb.gif" alt="lightbulb" />
-        </div>
-        <div className="card" data-image="03">
-          <div className="group3">
-            <img src="/game/03.gif" alt="note" />
-            <span>Only Speak English</span>
-          </div>
-          <img class="card__back" src="/game/lightbulb.gif" alt="lightbulb" />
-        </div>
-        <div className="card" data-image="04">
-          <div className="group4">
-            <img src="/game/04.gif" alt="note" />
-            <span>Exams for School</span>
-          </div>
-          <img class="card__back" src="/game/lightbulb.gif" alt="lightbulb" />
-        </div>
-        <div className="card" data-image="04">
-          <div className="group4">
-            <img src="/game/04.gif" alt="note" />
-            <span>Exams for School</span>
-          </div>
-          <img class="card__back" src="/game/lightbulb.gif" alt="lightbulb" />
-        </div>
+      <div className="cards">
+        {pairOfPokemons.map((pokemon, index) => {
+          //lets flip the card
+
+          let isFlipped = false;
+
+          if (openedCard.includes(index)) isFlipped = true;
+          if (matched.includes(pokemon.id)) isFlipped = true;
+          return (
+            <div
+              className={`pokemon-card ${isFlipped ? "flipped" : ""} `}
+              key={index}
+              onClick={() => flipCard(index)}
+            >
+              <div className="inner">
+                <div className="front">
+                  <img src={pokemon.url} alt="pokemon-name" width="100" />
+                  <h2>{pokemon.name}</h2>
+                </div>
+                <img className="back" src="/game/lightbulb.gif" />
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
 }
-
-export default gameMain;
