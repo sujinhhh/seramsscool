@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import "../../scss/company.scss";
-
+import { Link } from "react-router-dom";
 const CompanyRoot = () => {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -57,48 +57,57 @@ const CompanyRoot = () => {
         <section id="instructor">
           <div className="article__instructor">
             <h1>Instructor</h1>
-            <div className="article__person">
-              <h3>Mary</h3>
-              <img
-                src="https://cdn.pixabay.com/photo/2019/01/06/15/02/the-teacher-3917155_1280.jpg"
-                alt="teach"
-              />
-              <button className="btn">Sign up for class</button>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
-                optio, officia provident neque saepe ut. Sit quisquam porro ad
-                enim dolore sint ut vel. Minima architecto rem molestias eius
-                dignissimos!
-              </p>
-            </div>
-            <div className="article__person">
-              <h3>John</h3>
-              <img
-                src="https://images.unsplash.com/photo-1601233749763-354ad977e784?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1595&q=80"
-                alt=""
-              />
-              <button className="btn">Sign up for class</button>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
-                optio, officia provident neque saepe ut. Sit quisquam porro ad
-                enim dolore sint ut vel. Minima architecto rem molestias eius
-                dignissimos!
-              </p>
-            </div>
-            <div className="article__person">
-              <h3>Blenda</h3>
-              <img
-                src="https://images.unsplash.com/photo-1574320200632-4e123899b003?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
-                alt=""
-              />
-              <button className="btn">Sign up for class</button>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
-                optio, officia provident neque saepe ut. Sit quisquam porro ad
-                enim dolore sint ut vel. Minima architecto rem molestias eius
-                dignissimos!
-              </p>
-            </div>
+            <Link to="/register">
+              <div className="article__person">
+                <h3>Mary</h3>
+                <img
+                  src="https://cdn.pixabay.com/photo/2019/01/06/15/02/the-teacher-3917155_1280.jpg"
+                  alt="teach"
+                />
+
+                <button className="btn ">Sign up for class</button>
+
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
+                  optio, officia provident neque saepe ut. Sit quisquam porro ad
+                  enim dolore sint ut vel. Minima architecto rem molestias eius
+                  dignissimos!
+                </p>
+              </div>
+            </Link>
+            <Link to="/register">
+              <div className="article__person">
+                <h3>John</h3>
+                <img
+                  src="https://images.unsplash.com/photo-1601233749763-354ad977e784?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1595&q=80"
+                  alt=""
+                />
+
+                <button className="btn">Sign up for class</button>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
+                  optio, officia provident neque saepe ut. Sit quisquam porro ad
+                  enim dolore sint ut vel. Minima architecto rem molestias eius
+                  dignissimos!
+                </p>
+              </div>
+            </Link>
+            <Link to="/register">
+              <div className="article__person">
+                <h3>Blenda</h3>
+                <img
+                  src="https://images.unsplash.com/photo-1574320200632-4e123899b003?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
+                  alt=""
+                />
+                <button className="btn">Sign up for class</button>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est
+                  optio, officia provident neque saepe ut. Sit quisquam porro ad
+                  enim dolore sint ut vel. Minima architecto rem molestias eius
+                  dignissimos!
+                </p>
+              </div>
+            </Link>
           </div>
         </section>
         <section id="contact">

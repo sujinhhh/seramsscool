@@ -78,12 +78,12 @@ const NavBar = (props) => {
           <SignedInLinks close={closeMobileMenu} click={click} />
         )}
       </div>
-      <sapn
+      <span
         className={button ? "menu__icon" : "menu__icon hide"}
         onClick={handleClick}
       >
         {click ? <Close fontSize="large" /> : <MenuTwoTone fontSize="large" />}
-      </sapn>
+      </span>
     </nav>
   );
 };
