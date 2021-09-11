@@ -66,7 +66,7 @@ const NavBar = (props) => {
     <nav className="navbar">
       <Link to="/" className="left brand-logo" onClick={closeMobileMenu}>
         <div className="logo">
-          <img src="http://sulbi.link/images/aa.gif" alt="uncle" />
+          <img src="https://sujinhhh.github.io/img/aa.gif" alt="uncle" />
           <small>Seramss</small> Cool~
         </div>
       </Link>
