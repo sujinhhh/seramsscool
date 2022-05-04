@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Home.css";
 import TodoRoot from "./todoApp/TodoRoot";
-import GameMain from "./game/GameMain";
+import GameMain from "./game/gameMain";
 
 class Home extends Component {
   render() {
