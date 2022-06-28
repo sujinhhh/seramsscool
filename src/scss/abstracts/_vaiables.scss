@@ -1,3 +1,18 @@
+// google font
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&family=Single+Day&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Grechen+Fuemen&family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,500;0,700;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,400;0,500;0,700;1,200&family=Poppins:wght@600&display=swap");
+
+// Color ==========================================
+
 $primary-color: #272727;
 $secondary-color: #f385f6;
 $third-color: rgb(175, 84, 4);
@@ -8,6 +23,11 @@ $sub-text-color: #9b036b;
 $second-nav-background: pink;
 $linear-gradient01: #a18cd1;
 $linear-gradient02: #fbc2eb;
+$steps-color: rgba(30, 30, 30);
+$steps-bg: rgba(245, 245, 245);
+
+$borderS: 2rem;
+
 $font-weight: (
   "regular": 400,
   "medium": 500,

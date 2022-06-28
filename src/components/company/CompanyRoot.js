@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import "../../scss/company.scss";
+import "../../scss/styles.scss";
 import { Link } from "react-router-dom";
 const CompanyRoot = () => {
   const [showMenu, setShowMenu] = useState(false);

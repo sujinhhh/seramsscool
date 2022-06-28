@@ -1,0 +1,27 @@
+.video {
+  width: 100vw;
+  height: 70vh;
+  position: relative;
+}
+
+.video-title {
+  position: absolute;
+  bottom: 3%;
+  left: 40%;
+  transform: translate(-30%, 0);
+}
+.video-title h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 5%;
+  font-size: 5vw;
+  text-align: center;
+  text-shadow: 3px 4px 6px rgba(17, 17, 17, 0.5);
+}
+.video-title h2 {
+  font-size: 3vw;
+  color: blanchedalmond;
+  box-shadow: 2px 3px 4px rgba(250, 246, 250, 0.5);
+  font-weight: 300;
+}

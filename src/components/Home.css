@@ -12,15 +12,18 @@
 }
 
 .home__board {
-  margin: 3rem auto auto 15rem;
-}
-.home__game {
-  margin: 5rem 20rem 20rem auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  margin-top: 5%;
+  gap: 10%;
 }
 
 @media screen and (max-width: 960px) {
   .home__board {
     margin: 3rem auto;
+    flex-wrap: wrap;
   }
   .home__game {
     margin: 5rem auto;
