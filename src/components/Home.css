@@ -24,6 +24,7 @@
   .home__board {
     margin: 3rem auto;
     flex-wrap: wrap;
+    
   }
   .home__game {
     margin: 5rem auto;

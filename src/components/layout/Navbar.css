@@ -21,11 +21,16 @@
 }
 .logo {
   margin-left: 35px;
-  font-family: "Ubuntu", sans-serif;
-  box-shadow: 3px 3px 0 rgb(242, 224, 245);
+  font-family: "Delius Unicase", cursive;
+  box-shadow: 3px 3px 10px rgb(242, 224, 245);
   border-radius: 60px;
   color: #f6fc80;
   padding-right: 10px;
+  font-size: 80%;
+  font-weight: 700;
+  background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .menu__icon .hide {
@@ -64,7 +69,6 @@
   }
 
   .logo {
-    font-family: "Ubuntu", sans-serif;
     margin-left: 15px;
   }
 

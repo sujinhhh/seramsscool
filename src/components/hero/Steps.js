@@ -9,15 +9,15 @@ import {
 function Steps() {
   return (
     <div className="steps-container">
-      <h1>English Programs</h1>
+      <h1>Learn English Online</h1>
       <ol>
         <li>
           <div class="icon">
             <BsInfoCircleFill className="fa-solid fa-circle-info" />
           </div>
-          <div class="title">Personel Info</div>
+          <div class="title">How to Succeed Studying Online</div>
           <div class="descr">
-            Update Your Pernonel Information, Your basic destails in our system.
+            Set a schedule for your learner that suits their needs.
           </div>
         </li>
         <li>
